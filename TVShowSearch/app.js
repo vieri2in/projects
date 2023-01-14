@@ -1,6 +1,5 @@
 const form = document.querySelector('#searchForm');
 
-
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const images = document.getElementsByTagName('img');
@@ -10,7 +9,6 @@ form.addEventListener('submit', async (e) => {
         const config = { params: { q: searchTerm } };
         const res = await axios.get("https://api.tvmaze.com/search/shows", config);
         addImages(res.data);
-        clearImages();
     } catch (e) {
         console.log('Error!')
     }
